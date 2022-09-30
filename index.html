@@ -8,9 +8,48 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="icons8-todo-list-96.png"
+      type="image/x-icon"
+    />
+
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/c10c2f8581.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>To DO App</h1>
+    <div class="nav">
+      <img src="icons8-todo-list-96.png" alt="logo" />
+      <p>To Do App</p>
+    </div>
+
+    <div class="main">
+      <div class="addTaskDiv">
+        <p class="row1Heading">Add Task ✒️</p>
+        <form class="row2">
+          <input type="text" class="addTask" />
+          <button class="addbtn btn" onclick="add()">
+            <i class="fa-solid fa-plus" style="color: #fff"></i>
+          </button>
+        </form>
+      </div>
+
+      <div class="tasksDiv">
+        <p class="tasksrow1">Tasks List 📋</p>
+        <div class="tasksrow2">
+          <input type="checkbox" class="check" />
+          <p class="whatToDo">To make 7 projects</p>
+          <button class="removebtn btn" onclick="remove()">
+            <i class="fa-solid fa-minus" style="color: #fff"></i>
+          </button>
+        </div>
+      </div>
+    </div>
     <!-- JS -->
     <script src="script.js"></script>
   </body>

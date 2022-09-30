@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Poppins";
+  padding: 0%;
+  margin: 0%;
+}
+
+body {
+  background-color: #d4f2ef;
+}
+
+.nav {
+  padding: 0 5rem;
+  font-size: 1.5rem;
+  background-color: #29857f;
+  color: #000;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav img {
+  width: 5rem;
+}
+
+.nav p {
+  font-weight: 800;
+}
+.main {
+  padding: 2rem 5rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.addTaskDiv {
+  width: 100%;
+}
+
+.row2 {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0.6rem;
+}
+.addTask {
+  flex: 2;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):hover,
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):focus,
+textarea:hover,
+textarea:focus,
+select:hover,
+select:focus {
+  border: 1px solid #fff;
+  outline: none;
+}
+
+.btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+.addbtn {
+  background-color: rgb(41, 133, 127, 0.5);
+}
+
+.addbtn:active {
+  transform: scale(0.8);
+  background: rgb(41, 133, 127f);
+}
+.tasksDiv {
+  width: 100%;
+}
+.tasksrow1,
+.row1Heading {
+  color: #29857f;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+.tasksrow2 {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.tasksrow2:hover {
+  background-color: rgba(41, 133, 127, 0.1);
+}
+
+.whatToDo {
+  flex: 2;
+}
+.removebtn {
+  background: rgba(255, 30, 30, 0.5);
+}
+
+.removebtn:active {
+  transform: scale(0.8);
+  background: rgba(255, 30, 30);
+}
+
+.check {
+  accent-color: #156f6c;
+  width: 1rem;
+  height: 1rem;
+}
