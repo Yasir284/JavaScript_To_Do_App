@@ -30,7 +30,7 @@
 
     <div class="main">
       <div class="addTaskDiv">
-        <p class="row1Heading">Add Task ✒️</p>
+        <p class="row1Heading">Add Task ✏️</p>
         <form class="row2">
           <input type="text" class="addTask" />
           <button class="addbtn btn" onclick="add()">
@@ -41,9 +41,9 @@
 
       <div class="tasksDiv">
         <p class="tasksrow1">Tasks List 📋</p>
-
+        <div class="nothing">No task added</div>
         <!-- <div class="tasksrow2">
-          <input type="checkbox" class="check" />
+          <input type="checkbox" class="check" onclick = 'lineThrough($event)' />
           <p class="whatToDo">To make 7 projects</p>
           <button class="removebtn btn" onclick="remove()">
             <i class="fa-solid fa-minus" style="color: #fff"></i>

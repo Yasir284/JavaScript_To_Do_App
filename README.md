@@ -1,14 +1,14 @@
 ![badge](https://img.shields.io/badge/MADE%20WITH-HTML,%20CSS%20&%20JS-blue)
 ![badge](https://img.shields.io/badge/TIME%20TAKEN-3%20to%204%20hrs-red)
-[![badge](https://img.shields.io/badge/SEE%20DEMO%20-VISIT-green)](https://javascript-wordcount-project3.netlify.app/)
+[![badge](https://img.shields.io/badge/SEE%20DEMO%20-VISIT-green)](https://javascript-todoapp-project4.netlify.app/)
 
 # JavaScript To Do App
 
-- This is Javascript Project. In this project I have made a **To Do App** with JavasCript, which counts the words and characters you type in the textarea, you can also add a .txt file to check its word and character count.
+- This is Javascript Project. In this project I have made a **To Do App** with JavasCript, which adds and removes your daily tasks.
 
 - It took me 3-4 hrs to make this project. Please find the link below.
 
-  [![badge](https://img.shields.io/badge/LINK%20OF-PROJECT-white)](https://javascript-wordcount-project3.netlify.app/)
+  [![badge](https://img.shields.io/badge/LINK%20OF-PROJECT-darkgreen)](https://javascript-todoapp-project4.netlify.app/)
 
 ---
 
@@ -24,7 +24,7 @@
 
 ## 🎥 Working
 
-![Gif](Javascript_word_counter.gif)
+![Gif](todo_app.gif)
 
 ---
 
