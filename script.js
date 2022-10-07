@@ -5,15 +5,15 @@ let i = 1;
 
 // Adding elements
 function add() {
-  document.querySelector(".nothing").classList.add("hide");
   let text = document.querySelector(".addTask").value;
 
   if (text === "") {
-    return alert("Please enter task first");
   } else {
+    document.querySelector(".nothing").classList.add("hide");
     createTaskElement(text);
-
     document.querySelector(".addTask").value = "";
+    document.querySelector(".totalTasks").textContent =
+      "Total Tasks : " + (i - 1);
   }
 
   event.preventDefault();
@@ -22,12 +22,20 @@ function add() {
 // Removing elements
 function remove(node) {
   node.parentNode.remove();
-  document.querySelector(".addTask").value = "";
   i--;
   console.log(i);
-  if (i === 1) {
+  if (i < 2) {
     document.querySelector(".nothing").classList.remove("hide");
   }
+  document.querySelector(".totalTasks").textContent =
+    "Total Tasks : " + (i - 1);
+}
+
+// Edit Tasks
+function edit(node) {
+  document.querySelector(".addTask").value =
+    node.parentNode.querySelector(".whatToDo").textContent;
+  remove(node);
 }
 
 // Creating elements
@@ -46,7 +54,14 @@ function createTaskElement(text) {
     [i].append(document.createElement("button"));
   document
     .querySelectorAll(".tasksDiv div")
-    [i].querySelector("button")
+    [i].querySelectorAll("button")[0]
+    .append(document.createElement("i"));
+  document
+    .querySelectorAll(".tasksDiv div")
+    [i].append(document.createElement("button"));
+  document
+    .querySelectorAll(".tasksDiv div")
+    [i].querySelectorAll("button")[1]
     .append(document.createElement("i"));
 
   let taskDiv = document.querySelectorAll(".tasksDiv div")[i];
@@ -59,13 +74,27 @@ function createTaskElement(text) {
   taskDiv.querySelector("p").setAttribute("class", "whatToDo");
   taskDiv.querySelector("p").textContent = text;
 
-  taskDiv.querySelector("button").setAttribute("class", "removebtn");
-  taskDiv.querySelector("button").setAttribute("onclick", "remove(this)");
-  taskDiv.querySelector("button").classList.add("btn");
+  taskDiv.querySelectorAll("button")[0].setAttribute("class", "editbtn");
+  taskDiv.querySelectorAll("button")[0].setAttribute("onclick", "edit(this)");
+  taskDiv.querySelectorAll("button")[0].classList.add("btn");
 
-  taskDiv.querySelector("button i").setAttribute("class", "fa-solid");
-  taskDiv.querySelector("button i").classList.add("fa-minus");
-  taskDiv.querySelector("button i").style.color = "#fff";
+  taskDiv
+    .querySelectorAll("button")[0]
+    .firstChild.setAttribute("class", "fa-solid");
+  taskDiv
+    .querySelectorAll("button")[0]
+    .firstChild.classList.add("fa-pen-to-square");
+  taskDiv.querySelectorAll("button")[0].firstChild.style.color = "#fff";
+
+  taskDiv.querySelectorAll("button")[1].setAttribute("class", "removebtn");
+  taskDiv.querySelectorAll("button")[1].setAttribute("onclick", "remove(this)");
+  taskDiv.querySelectorAll("button")[1].classList.add("btn");
+
+  taskDiv
+    .querySelectorAll("button")[1]
+    .firstChild.setAttribute("class", "fa-solid");
+  taskDiv.querySelectorAll("button")[1].firstChild.classList.add("fa-minus");
+  taskDiv.querySelectorAll("button")[1].firstChild.style.color = "#fff";
 
   i++;
   console.log(i);
@@ -75,4 +104,13 @@ function createTaskElement(text) {
 function lineThrough(node) {
   node.parentNode.querySelector(".whatToDo").classList.toggle("lineThrough");
   node.parentNode.classList.toggle("green");
+  getTaskDone();
+}
+
+function getTaskDone() {
+  let checkbox = document
+    .querySelectorAll(".check")
+    .filter((val) => val == true);
+  document.querySelector(".tasksDone").textContent =
+    "Tasks Done : " + checkbox.length;
 }

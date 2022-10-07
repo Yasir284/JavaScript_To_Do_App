@@ -24,8 +24,15 @@
   </head>
   <body>
     <div class="nav">
-      <img src="icons8-todo-list-96.png" alt="logo" />
-      <p>To Do App</p>
+      <div class="left">
+        <img src="icons8-todo-list-96.png" alt="logo" />
+        <p>To Do App</p>
+      </div>
+
+      <div class="right">
+        <p class="totalTasks">Total Tasks : 0</p>
+        <p class="tasksDone">Tasks Done : 0</p>
+      </div>
     </div>
 
     <div class="main">
@@ -43,9 +50,17 @@
         <p class="tasksrow1">Tasks List 📋</p>
         <div class="nothing">No task added</div>
         <!-- <div class="tasksrow2">
-          <input type="checkbox" class="check" onclick = 'lineThrough($event)' />
+          <input type="checkbox" class="check" onclick="lineThrough($event)" />
           <p class="whatToDo">To make 7 projects</p>
-          <button class="removebtn btn" onclick="remove()">
+          <button
+            class="editbtn btn"
+            style="color: #fff"
+            onclick="edit()"
+            title="Edit"
+          >
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+          <button class="removebtn btn" onclick="remove()" title="Remove">
             <i class="fa-solid fa-minus" style="color: #fff"></i>
           </button>
         </div> -->
