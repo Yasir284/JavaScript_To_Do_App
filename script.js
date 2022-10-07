@@ -1,7 +1,8 @@
 // To-do App:
 //Build a simple todo app which adds tasks,edit the tasks and also delete the tasks.
 
-let i = 1;
+let i = 0;
+let j = 0;
 
 // Adding elements
 function add() {
@@ -12,8 +13,7 @@ function add() {
     document.querySelector(".nothing").classList.add("hide");
     createTaskElement(text);
     document.querySelector(".addTask").value = "";
-    document.querySelector(".totalTasks").textContent =
-      "Total Tasks : " + (i - 1);
+    document.querySelector(".totalTasks").textContent = "Total Tasks : " + i;
   }
 
   event.preventDefault();
@@ -22,13 +22,13 @@ function add() {
 // Removing elements
 function remove(node) {
   node.parentNode.remove();
+  getTaskDone();
   i--;
   console.log(i);
-  if (i < 2) {
+  if (i == 0) {
     document.querySelector(".nothing").classList.remove("hide");
   }
-  document.querySelector(".totalTasks").textContent =
-    "Total Tasks : " + (i - 1);
+  document.querySelector(".totalTasks").textContent = "Total Tasks : " + i;
 }
 
 // Edit Tasks
@@ -108,9 +108,13 @@ function lineThrough(node) {
 }
 
 function getTaskDone() {
-  let checkbox = document
-    .querySelectorAll(".check")
-    .filter((val) => val == true);
-  document.querySelector(".tasksDone").textContent =
-    "Tasks Done : " + checkbox.length;
+  let checkbox = document.querySelectorAll(".check");
+  for (let i = 0; i < checkbox.length; i++) {
+    if (checkbox[i].checked == true) {
+      j++;
+    }
+    console.log(checkbox[i].checked);
+  }
+  document.querySelector(".tasksDone").textContent = `Task Done : ${j}`;
+  j = 0;
 }
