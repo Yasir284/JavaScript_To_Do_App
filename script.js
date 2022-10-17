@@ -8,8 +8,7 @@ let j = 0;
 function add() {
   let text = document.querySelector(".addTask").value;
 
-  if (text === "") {
-  } else {
+  if (text !== "") {
     document.querySelector(".nothing").classList.add("hide");
     createTaskElement(text);
     document.querySelector(".addTask").value = "";
